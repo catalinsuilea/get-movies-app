@@ -1,0 +1,30 @@
+.character-img img {
+  width: 150px;
+}
+.character-img {
+  width: 100%;
+}
+.characters-cards-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px auto;
+  overflow-y: scroll;
+  max-height: 70vh;
+  width: 70%;
+  flex-wrap: wrap;
+}
+.charcacter-card {
+  border: 1px solid black;
+  margin: 20px;
+}
+.character-real-name {
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.character-names {
+  display: block;
+}
