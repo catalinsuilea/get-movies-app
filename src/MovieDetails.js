@@ -16,15 +16,14 @@ const MovieDetails = (props) => {
       setMovieInfo(data);
     };
     fetchMovieInfo();
-  }, [id]);
+  }, []);
   console.log(movieInfo);
   const { cast, crew } = movieInfo;
   console.log(cast, crew);
   return (
     <div>
-      {/*
       <div className="characters-cards-container">
-        {cast.map((item) => (
+        {cast?.map((item) => (
           <div className="charcacter-card">
             <div className="character-img">
               <img
@@ -44,7 +43,7 @@ const MovieDetails = (props) => {
         ))}
         ;
       </div>
-      */}
+
       <div className="overview">
         <span>{props.title}</span>
         <p>{props.description}</p>

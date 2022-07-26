@@ -15,7 +15,7 @@
   flex-wrap: wrap;
 }
 .charcacter-card {
-  border: 1px solid black;
+  border: 1px solid red;
   margin: 20px;
 }
 .character-real-name {
