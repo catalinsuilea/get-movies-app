@@ -47,18 +47,18 @@ const GetMovies = () => {
   };
   //console.log(uniqueId);
 
-  // useEffect(() => {
-  //   const fetchMovieInfo = async () => {
-  //     const res = await axios.get(
-  //       `https://api.themoviedb.org/3/movie/${uniqueId}/credits?api_key=380f962505ebde6dee08b0b646fe05f1&language=en-US`
-  //     );
-  //     const data = await res.data;
-  //     console.log(data);
-  //     setMovieInfo(data);
-  //   };
-  //   fetchMovieInfo();
-  // }, []);
-  // console.log(movieInfo);
+  useEffect(() => {
+    const fetchMovieInfo = async () => {
+      const res = await axios.get(
+        "https://api.themoviedb.org/3/movie/507086/release_dates?api_key=<<api_key>>"
+      );
+      const data = await res.data;
+      console.log(data);
+      setMovieInfo(data);
+    };
+    fetchMovieInfo();
+  }, [genreId]);
+  console.log(movieInfo);
   return (
     <div>
       <div className="movie-app">
