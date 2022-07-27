@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import axios from "axios";
 import MovieCard from "./MovieCard";
-
-//import { getGenre } from "./getGenre";
 import "./movie-app.css";
+
 const GetMovies = () => {
-  const [movies, setMovie] = useState([]);
+  const [movies, setMovie] = useState(null);
   const [genre, setGenre] = useState([]);
   const [genreId, setGenreId] = useState([]);
-  const [movieInfo, setMovieInfo] = useState({});
-  const [uniqueId, setUniqueId] = useState(0);
+  const { id } = useParams();
+  console.log(id);
   //Get a list of movies by genre
   useEffect(() => {
     const fetchMovies = async () => {
@@ -34,31 +34,15 @@ const GetMovies = () => {
     };
     getGenre();
   }, []);
-
   // Get the id from a movie (this will go down as a prop for MovieCard)
   const getMovieId = function (id) {
     let movieId;
     movies.filter((movie) => {
       if (movie.id === id) movieId = movie.id;
-      // setUniqueId(movieId);
     });
     console.log(movieId);
     return movieId;
   };
-  //console.log(uniqueId);
-
-  useEffect(() => {
-    const fetchMovieInfo = async () => {
-      const res = await axios.get(
-        "https://api.themoviedb.org/3/movie/507086/release_dates?api_key=<<api_key>>"
-      );
-      const data = await res.data;
-      console.log(data);
-      setMovieInfo(data);
-    };
-    fetchMovieInfo();
-  }, [genreId]);
-  console.log(movieInfo);
   return (
     <div>
       <div className="movie-app">
@@ -77,7 +61,7 @@ const GetMovies = () => {
         </select>
       </div>
       <div>
-        {movies.map((movie) => (
+        {movies?.map((movie) => (
           <MovieCard
             key={movie.id}
             imgSrc={movie.backdrop_path}
