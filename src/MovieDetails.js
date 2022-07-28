@@ -6,7 +6,7 @@ const MovieDetails = () => {
   const { id } = useParams();
   const [castInfo, setCastInfo] = useState({});
   const [movieInfo, setMovieInfo] = useState({});
-
+  console.log(id);
   useEffect(() => {
     const fetchCastInfo = async () => {
       const res = await axios.get(

@@ -11,7 +11,7 @@ const MovieCard = (props) => {
   return (
     <div className="card-container">
       <Link
-        to={`/${props.id}`}
+        to={`/${props.title}/${props.id}`}
         style={{ textDecoration: "none", color: "black" }}
       >
         <div
