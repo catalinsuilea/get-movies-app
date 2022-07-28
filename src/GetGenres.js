@@ -36,7 +36,7 @@ const GetGenres = () => {
   return (
     <div>
       <div className="movie-app">
-        <h1>Pick a movie by genre!</h1>
+        <h1>Pick movies by genre!</h1>
         <select
           onChange={(e) => {
             const movie = genre.filter((item) => item.name === e.target.value);
