@@ -12,7 +12,11 @@ function App() {
         <Route path="/" element={<GetGenres />}></Route>
         <Route
           path="/movies/:genreName/:genreID"
-          element={<GetMovies />}
+          element={
+            <>
+              <GetGenres /> <GetMovies />
+            </>
+          }
         ></Route>
         <Route path="/:movieName/:id" element={<MovieDetails />}></Route>
       </Routes>
